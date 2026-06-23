@@ -1,0 +1,28 @@
+<section id="inicio" class = "hero">
+            <img src="../img/Naraka.jpg">
+            <div class = "overlay">
+            <h2>Gestión de registro de usuarios</h2>
+            <p>Página para administrar registros de usuarios.</p>
+            
+            <!--<a href="">Iniciar sesión</a>-->
+            </div>
+        </section>
+
+        <section id="servicios">
+    <h2>Funciones del sistema</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Usuarios</h3>
+                <p>Registro, login y listado de usuarios del sistema.</p>
+        </div>
+
+        <div class="card">
+            <h3>Contenedores</h3>
+            <p>Gestión de contenedores en el sistema.</p>
+        </div>
+
+        <div class="card">
+            <h3>Listado</h3>
+            <p>Visualización y gestión de los registros existentes en el sistema.</p>
+        </div>

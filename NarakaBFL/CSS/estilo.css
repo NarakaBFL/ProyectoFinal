@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 header {
-    background-color: #ff4a22;
+    background-color: #b0b3f7;
     border-bottom: 2px solid #000000;
     padding: 15px 20px;
    
@@ -73,13 +73,41 @@ button:hover {
 }
 
 .card {
-     background-color:#ff4a22;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-     border: 1px solid #000000;
+    border-radius: 16px;
+    width: 330px;
+    height: 330px;
+     border: 1px solid black;
+     background-size: cover;
+     background-position: center;
+     overflow: hidden;
     transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px #999;
+}
+
+.card-contenido {
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 25px;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.card-separacion {
+    background-image: url("../img/SeparaciónMateriales.png");
+}
+
+.card-reduccion {
+    background-image: url("../img/ReducciónResiduos.png");
+}
+
+.card-transporte {
+    background-image: url("../img/TransporteResiduos.png");
+}
+
+.card-reciclaje {
+    background-image: url("../img/ReciclajeSímbolo.png");
 }
 
 .card:hover {
@@ -89,12 +117,13 @@ button:hover {
 }
 
 .card h3 {
-    color: #000000;
-    margin-bottom: 10px;
+    color: white;
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
 .card p {
-    color: #ccc;
+    font-size: 20px;
 }
 
 .btn-wsp {
@@ -243,7 +272,7 @@ button:hover {
  .hero{
     height: 70vh;
 
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("../img/LeonidasBacon.png");
+    background-image: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url("../img/LOGODEFINITIVO.png");
 
     background-size: cover;
     background-position: center center;
@@ -285,6 +314,10 @@ button:hover {
     font-size: 25px;
     margin-bottom: 30px;
 
+}
+
+footer {
+    background-color: #b0b3f7;
 }
 
 @media (max-width: 768px) {
