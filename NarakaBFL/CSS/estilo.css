@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color:#ff4a22;
+    background-color: white;
     color: #f3eedd;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -73,9 +73,9 @@ button:hover {
 }
 
 .card {
-    border-radius: 16px;
+    border-radius: 20px;
     width: 330px;
-    height: 330px;
+    height: 320px;
      border: 1px solid black;
      background-size: cover;
      background-position: center;
@@ -126,17 +126,14 @@ button:hover {
     font-size: 20px;
 }
 
-.btn-wsp {
-    background-color:  #e85d35;
-    color: white;
-    padding: 15px 35px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .btn-wsp:hover {
@@ -314,6 +311,54 @@ button:hover {
     font-size: 25px;
     margin-bottom: 30px;
 
+}
+
+.info {
+    background-color: #f3f1e8;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.info h2{
+    color: #26351f;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contenedor-info {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid #b0b3f7;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.info-card h3 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 22px; 
+}
+
+.info-card {
+    color: #444;
+    font-size: 17px;
+    line-height: 1.5;
 }
 
 footer {
