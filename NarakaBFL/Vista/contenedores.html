@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedores - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Naraka BFL</h1>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="panel.html">Panel</a></li>
+                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="contenedores.html">Contenedores</a></li>
+                    <li><a href="camiones.html">Camiones</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="gestion-main">
+        <h2>Gestión de contenedores</h2>
+        <p>
+            Listado de contenedores registrados en el sistema.
+        </p>
+
+        <div class="acciones">
+            <a href="formContenedor.html" class="btn-nuevo">+ Nuevo Contenedor</a>
+        </div>
+
+        <div class="tabla-form">
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Código/th>
+                    <th>Tipo</th>
+                    <th>Capacidad</th>
+                    <th>Ubicación</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>C001</td>
+                    <td>Plástico</td>
+                    <td>1000 L</td>
+                    <td>Centro</td>
+                    <td>Activo</td>
+                    <td>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>C002</td>
+                    <td>Papel</td>
+                    <td>800 L</td>
+                    <td>Parque</td>
+                    <td>Activo</td>
+                    <td>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+</body>
+</html>
