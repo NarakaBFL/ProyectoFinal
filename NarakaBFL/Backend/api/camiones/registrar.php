@@ -7,20 +7,27 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $body = obtenerBody();
-$patente = $body['patente'] ?? '';
+$fecha = $body['fecha'] ?? '';
+$matricula = $body['matricula'] ?? '';
+$marca = $body['marca'] ?? '';
 $modelo = $body['modelo'] ?? '';
-$capacidadCarga = $body['capacidad_carga'] ?? 0;
+$carga = $body['carga'] ?? 0;
+$estado = $body['estado'] ?? '';
+$chofer = $body['chofer'] ?? '';
 
-if (empty($patente) || empty($modelo)) {
+if (empty($matricula) || empty($marca) || empty($modelo) || empty($estado)) {
     responder(400, null, 'Faltan campos obligatorios');
 }
 
 $nuevoCamion = [
     'id' => count($_SESSION['camiones']) + 1,
-    'patente' => $patente,
+    'fecha' => $fecha,
+    'matricula' => $matricula,
+    'marca' => $marca,
     'modelo' => $modelo,
-    'capacidad_carga' => $capacidadCarga,
-    'estado' => 'Activo'
+    'carga' => $carga,
+    'estado' => $estado,
+    'chofer' => $chofer
 ];
 
 $_SESSION['camiones'][] = $nuevoCamion;
