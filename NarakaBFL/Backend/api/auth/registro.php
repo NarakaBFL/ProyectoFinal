@@ -8,11 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $body = obtenerBody();
 $nombre = $body['nombre'] ?? '';
+$apellido = $body['apellido'] ?? '';
 $email = $body['email'] ?? '';
 $password = $body['password'] ?? '';
-$rol = $body['rol'] ?? 'Vecino';
+$rol = 'Vecino'; // autorregistro siempre entra como Vecino
 
-if (empty($nombre) || empty($email) || empty($password)) {
+if (empty($nombre) || empty($apellido) || empty($email) || empty($password)) {
     responder(400, null, 'Faltan campos obligatorios');
 }
 
@@ -26,6 +27,7 @@ $nuevoId = count($_SESSION['usuarios']) + 1;
 $nuevoUsuario = [
     'id' => $nuevoId,
     'nombre' => $nombre,
+    'apellido' => $apellido,
     'email' => $email,
     'password' => password_hash($password, PASSWORD_DEFAULT),
     'rol' => $rol
