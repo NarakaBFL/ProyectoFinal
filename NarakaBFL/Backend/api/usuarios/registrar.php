@@ -8,15 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $body = obtenerBody();
 $nombre = $body['nombre'] ?? '';
+$apellido = $body['apellido'] ?? '';
 $email = $body['email'] ?? '';
 $password = $body['password'] ?? '';
 $rol = $body['rol'] ?? '';
 
-// Acá sí exigimos el rol, porque lo asigna el admin (no como el autorregistro)
 $rolesValidos = ['Administrador', 'Cuadrilla', 'Operario', 'Vecino'];
 
-if (empty($nombre) || empty($email) || empty($password) || empty($rol)) {
-    responder(400, null, 'Faltan campos obligatorios (nombre, email, password, rol)');
+if (empty($nombre) || empty($apellido) || empty($email) || empty($password) || empty($rol)) {
+    responder(400, null, 'Faltan campos obligatorios (nombre, apellido, email, password, rol)');
 }
 
 if (!in_array($rol, $rolesValidos)) {
@@ -33,6 +33,7 @@ $nuevoId = count($_SESSION['usuarios']) + 1;
 $nuevoUsuario = [
     'id' => $nuevoId,
     'nombre' => $nombre,
+    'apellido' => $apellido,
     'email' => $email,
     'password' => password_hash($password, PASSWORD_DEFAULT),
     'rol' => $rol
