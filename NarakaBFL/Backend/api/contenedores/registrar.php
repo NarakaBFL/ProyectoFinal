@@ -1,5 +1,4 @@
 <?php
-// registrar.php
 require_once __DIR__ . '/../../config/session.php';
 require_once __DIR__ . '/../../helpers/response.php';
 
@@ -8,20 +7,23 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $body = obtenerBody();
-$ubicacion = $body['ubicacion'] ?? '';
-$tipoResiduo = $body['tipo_residuo'] ?? '';
-$capacidad = $body['capacidad'] ?? 0;
+$codigo = $body['codigo'] ?? '';
+$tipo = $body['tipo'] ?? '';
+$litros = $body['litros'] ?? 0;
+$ubi = $body['ubi'] ?? '';
+$estado = $body['estado'] ?? '';
 
-if (empty($ubicacion) || empty($tipoResiduo)) {
+if (empty($codigo) || empty($tipo) || empty($ubi) || empty($estado)) {
     responder(400, null, 'Faltan campos obligatorios');
 }
 
 $nuevoContenedor = [
     'id' => count($_SESSION['contenedores']) + 1,
-    'ubicacion' => $ubicacion,
-    'tipo_residuo' => $tipoResiduo,
-    'capacidad' => $capacidad,
-    'estado' => 'Activo'
+    'codigo' => $codigo,
+    'tipo' => $tipo,
+    'litros' => $litros,
+    'ubi' => $ubi,
+    'estado' => $estado
 ];
 
 $_SESSION['contenedores'][] = $nuevoContenedor;
