@@ -1,0 +1,816 @@
+
+/* Panel principal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#inicio h2 {
+    color: white;
+     font-size: 32px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: white;
+    color: #f3eedd;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+header {
+    background-color: #b0b3f7;
+    border-bottom: 2px solid #000000;
+    padding: 15px 20px;
+   
+}
+
+section {
+    background-color: #f5f2e8;
+    color: #000000;
+    padding: 40px;
+    border-bottom: 1px solid #000000;
+}
+
+button {
+    background-color: #f4b400;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#inicio {
+    padding: 0;
+}
+
+#inicio p {
+    font-size: 18px;
+    color: #bfb9a8;
+}
+
+
+button {
+    background-color: #f4b400;
+    color: black;
+    padding: 14px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+.menu-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 20px;
+    width: 330px;
+    height: 320px;
+     border: 1px solid black;
+     background-size: cover;
+     background-position: center;
+     overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px #999;
+}
+
+.card-contenido {
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 25px;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+}
+
+.card-separacion {
+    background-image: url("../img/SeparaciónMateriales.png");
+}
+
+.card-reduccion {
+    background-image: url("../img/ReducciónResiduos.png");
+}
+
+.card-transporte {
+    background-image: url("../img/TransporteResiduos.png");
+}
+
+.card-reciclaje {
+    background-image: url("../img/ReciclajeSímbolo.png");
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #f4b400;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: white;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 20px;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#menu {
+    text-align: center;
+}
+
+.menu-container {
+    justify-content: center;
+}
+
+.menu-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#menu h2 {
+    margin-bottom: 30px;
+    color:#000000
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight:bold;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.navbar {
+    display: flex;
+    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #f4b400;
+    transition: 0.5s;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav.links a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+ .hero{
+    height: 70vh;
+
+    background-image: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url("../img/LOGODEFINITIVO.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+
+}
+
+.overlay{
+    background-color: rgba(0,0,0,0.45);
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 20px;
+}
+
+.overlay h2{
+    color: white;
+    font-size: 60px; 
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.overlay p{
+    font-size: 25px;
+    margin-bottom: 30px;
+
+}
+
+.info {
+    background-color: #f3f1e8;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.info h2{
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contenedor-info {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid #b0b3f7;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.info-card h3 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 22px; 
+}
+
+.info-card {
+    color: #444;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #b0b3f7;
+}
+
+@media (max-width: 900px) {
+
+   .hero {
+        height: 60vh;
+    }
+
+   .overlay h2 {
+        font-size: 28px;
+    }
+
+    .overlay p {
+        font-size: 16px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+    }
+
+    .navbar li {
+        list-style: none;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    #inicio {
+        padding: 0;
+    }
+
+    #inicio p {
+        font-size: 16px;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+}
+/*----------------------------------------------------------------------*/
+
+/* Login de usuario */
+
+.login-main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f1e8;
+    padding: 40px 20px;
+}
+
+.login-card{
+    background-color: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-top: 8px solid #b0b3f7;
+}
+
+.login-card h2{
+    text-align: center;
+    color: #000000;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.login-card p{
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.login-card form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label{
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #26351f;
+}
+
+.login-card input{
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login-card input:focus{
+    outline: none;
+    border-color: #6f8f3d;
+}
+
+.login-card button{
+    background-color: #b0b3f7;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 18px; 
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+.login-card button:hover{
+    background-color: #edbd3a;
+}
+
+.login-link{
+    margin-top: 20px;
+}
+
+.login-link a{
+    color: #000000;
+    font-weight: bold; 
+    text-decoration: none;
+}
+/*----------------------------------------------------------------------*/  
+
+/* Registro de usuario */
+
+.registro-main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f1e8;
+    padding: 40px 20px;
+}
+
+.registro-card{
+background-color: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-top: 8px solid #b0b3f7;
+}
+
+.registro-card h2{
+    text-align: center;
+    color: #000000;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.registro-card p{
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.registro-card form{
+   display: flex;
+   flex-direction: column;
+}
+
+.registro-card label{
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.registro-card input{
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.registro-card input:focus{
+  outline: none;
+  border-color:  #b0b3f7;
+}
+
+.registro-card button{
+    background-color: #b0b3f7;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 18px; 
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+.registro-card button:hover{
+    background-color: #edbd3a;
+}
+
+.registro-link{
+    margin-top: 20px;
+}
+
+.registro-link a{
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+/*----------------------------------------------------------------------*/
+
+/* Panel principal */
+.panel-main{
+    background-color: #f3f1e8;
+    min-height: 80vh;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.panel-main h2{
+    color:#000000;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.panel-main p{
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color:#000000;
+    padding: 10px;
+}
+
+.panel-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.panel-tarjetas a {
+    text-decoration: none;
+}
+
+.panel-card {
+    border-radius: 20px;
+    width: 320px;
+    padding: 35px;
+    border: 1px solid black;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+    box-shadow: 0 6px 18px #333;
+    background-image: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url("../img/itemsAleatorios.png");
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-card:hover {
+    border-color: #f4b400;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+}
+
+.panel-card h3 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.panel-card p {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+/*----------------------------------------------------------------------*/
+
+/* Gestión de usuarios, camiones y contenedores */
+
+.gestion-main{
+    background-color: #f3f1e8;
+    min-height: 80vh;
+    padding: 60px 30px;
+}
+
+.gestion-main h2{
+    color: #000000;
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gestion-main p{
+    font-size: 17px;
+    margin-bottom: 10px;
+    color:#000000;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.acciones {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.btn-nuevo {
+    text-align: center;
+    background-color: #3f4a32;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-nuevo:hover {
+    background-color: #6f8f3d;
+}
+
+.tabla-form {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #b0b3f7;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #000000;
+}
+
+tr:hover {
+    background-color: #f8f8f8;
+}
+
+.btn-editar, .btn-eliminar {
+    background-color: #f4b400;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    padding: 8px 14px;
+}
+
+.btn-editar:hover {
+    background-color: #ffcc00;
+}
+
+.btn-eliminar:hover {
+    background-color: #ffcc00;
+}
+/*----------------------------------------------------------------------*/
+
+/* Formulario de usuarios, camiones, contenedores */
+
+.form-main{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f1e8;
+    padding: 40px 20px;
+}
+
+.form-card{
+background-color: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-top: 8px solid #b0b3f7;
+}
+
+.form-card h2{
+    text-align: center;
+    color: #000000;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.form-card p{
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.form-card form{
+   display: flex;
+   flex-direction: column;
+}
+
+.form-card label{
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.form-card input{
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-card input:focus{
+  outline: none;
+  border-color:  #b0b3f7;
+}
+
+.form-link{
+    margin-top: 20px;
+}
+
+.form-link a{
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.botones-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.botones-opciones button, .botones-opciones a {
+    width: 150px;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-guardar{
+    background-color: #b0b3f7;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-cancelar{
+    background-color: #b0b3f7;
+    color: white;
+    transition: 0.3s;
+
+}
+
+.btn-cancelar:hover{
+    background-color:  #edbd3a;
+}
+/*----------------------------------------------------------------------*/
+
+/* Botón de enviar reporte*/
+
+.btn-enviar{
+    background-color: #365a24;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover{
+    background-color:  #4c8441;
+}
+
+

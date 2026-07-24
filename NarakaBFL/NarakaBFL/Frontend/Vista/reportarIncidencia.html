@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario incidencia vecino - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+        <h1>Naraka BFL</h1>
+
+        <div class="nav-links">
+            <ul>
+               <li><a href="panel.html">Panel</a></li>
+                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="contenedores.html">Contenedores</a></li>
+                    <li><a href="camiones.html">Camiones</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <!-- Formulario para reportar una nueva incidencia en el sistema -->
+    <main class="form-main">
+        <section class="form-card">
+
+            <h2>Reportar nueva incidencia</h2>
+            <p>Complete todos los campos para reportar una nueva incidencia en el sistema.</p>
+            
+            <!-- Creación de campos para reportar incidencia-->
+            <form>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" placeholder="Fecha del reporte" required>
+
+                <label for="tipo">Tipo de incidencia</label>
+                <select name="tipo" id="tipo" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="rotura">Rotura</option>
+                    <option value="desborde">Desborde</option>
+                    <option value="falta-recolección">Falta de recolección</option>
+                    <option value="otro">otro</option>
+                </select>
+
+                <label for="contenedor">Contenedor involucrado</label>
+                <select name="contenedor" id="contenedor" required>
+                    <option value="">Seleccione un contenedor</option>
+                    <option value="">No corresponde</option>
+                    <option value="1">Contenedor C-001</option>
+                    <option value="2">Contenedor C-002</option>
+                </select>
+
+                <label for="desc">Descripción:</label>
+                <textarea id="desc" name="desc" rows="6" required></textarea>
+
+                <!-- Botones de acción: Guardar y cancelar -->
+                   <div class="botones-opciones">
+                <button type="submit" class="btn-enviar">Enviar reporte</button>
+            </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+    
+</body>
+</html>
