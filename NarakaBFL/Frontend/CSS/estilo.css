@@ -162,11 +162,15 @@ button:hover {
 
 .navbar h1 {
     margin: 0;
-    font-size: 45px;
+    font-size: 42px;
+    font-weight:bold;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .navbar {
     display: flex;
+    padding: 20px 30px;
     justify-content: space-between;
     align-items: center;
 }
@@ -186,6 +190,20 @@ button:hover {
 .navbar a:hover {
     color: #f4b400;
     transition: 0.5s;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav.links a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
  .hero{
@@ -286,7 +304,7 @@ footer {
     background-color: #b0b3f7;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
    .hero {
         height: 60vh;
@@ -300,6 +318,11 @@ footer {
         font-size: 16px;
     }
 
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .navbar ul {
     display: flex;
     flex-wrap: wrap;
@@ -307,7 +330,7 @@ footer {
     gap: 14px;
     padding: 0;
     margin: 0;
-}
+    }
 
     .navbar li {
         list-style: none;
@@ -524,6 +547,7 @@ background-color: white;
     font-size: 17px;
     margin-bottom: 10px;
     color:#000000;
+    padding: 10px;
 }
 
 .panel-tarjetas {
@@ -531,6 +555,7 @@ background-color: white;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .panel-tarjetas a {
@@ -664,7 +689,7 @@ tr:hover {
 }
 /*----------------------------------------------------------------------*/
 
-/* Formulario de usuarios */
+/* Formulario de usuarios, camiones, contenedores */
 
 .form-main{
     min-height: 80vh;
@@ -775,5 +800,17 @@ background-color: white;
     background-color:  #edbd3a;
 }
 /*----------------------------------------------------------------------*/
+
+/* Botón de enviar reporte*/
+
+.btn-enviar{
+    background-color: #365a24;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover{
+    background-color:  #4c8441;
+}
 
 

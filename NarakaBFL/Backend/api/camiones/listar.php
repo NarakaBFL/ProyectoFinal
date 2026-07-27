@@ -6,4 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     responder(405, null, 'Método no permitido');
 }
 
-responder(200, $_SESSION['camiones'], 'Listado de camiones');
+$camiones = $_SESSION['camiones'] ?? [];
+
+responder(200, $camiones, 'Listado de camiones');

@@ -10,13 +10,13 @@ $body = obtenerBody();
 $nombre = $body['nombre'] ?? '';
 $apellido = $body['apellido'] ?? '';
 $email = $body['email'] ?? '';
-$password = $body['password'] ?? '';
-$rol = $body['rol'] ?? '';
+$contrasena = $body['contrasena'] ?? '';
+$id_rol = $body['id_rol'] ?? '';
 
 $rolesValidos = ['Administrador', 'Cuadrilla', 'Operario', 'Vecino'];
 
-if (empty($nombre) || empty($apellido) || empty($email) || empty($password) || empty($rol)) {
-    responder(400, null, 'Faltan campos obligatorios (nombre, apellido, email, password, rol)');
+if (empty($nombre) || empty($apellido) || empty($email) || empty($contrasena)) {
+    responder(400, null, 'Faltan campos obligatorios (nombre, apellido, email, contrasena)');
 }
 
 if (!in_array($rol, $rolesValidos)) {
@@ -35,8 +35,8 @@ $nuevoUsuario = [
     'nombre' => $nombre,
     'apellido' => $apellido,
     'email' => $email,
-    'password' => password_hash($password, PASSWORD_DEFAULT),
-    'rol' => $rol
+    'contrasena' => password_hash($password, PASSWORD_DEFAULT),
+    'id_rol' => $id_rol
 ];
 
 $_SESSION['usuarios'][] = $nuevoUsuario;

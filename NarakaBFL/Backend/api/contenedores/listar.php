@@ -7,3 +7,4 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 responder(200, $_SESSION['contenedores'], 'Listado de contenedores');
+?>

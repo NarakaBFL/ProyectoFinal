@@ -6,9 +6,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     responder(405, null, 'Método no permitido');
 }
 
-$usuarios = array_map(function ($u) {
-    unset($u['password']);
-    return $u;
-}, $_SESSION['usuarios']);
+$usuarios = $_SESSION['usuarios'];
+
+foreach ($usuarios as &$usuario){
+    unset(
+        $usuario['contrasena'],
+        $usuario['password']
+    );
+}
+
+unset($usuario);
 
 responder(200, $usuarios, 'Listado de usuarios');

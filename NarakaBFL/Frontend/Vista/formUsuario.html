@@ -10,23 +10,28 @@
 
     <header>
     <nav class="navbar">
-        <h1>Naraka BFL</h1>
+        <h1>SiGeRU</h1>
 
         <div class="nav-links">
             <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="login.html">Iniciar sesión</a></li>
+                <li><a href="panel.html">Panel</a></li>
+                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="contenedores.html">Contenedores</a></li>
+                    <li><a href="camiones.html">Camiones</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
             </ul>
         </div>
     </nav>
 </header>
 
+<!-- Formulario para registrar un nuevo usuario en el sistema -->
     <main class="form-main">
         <section class="form-card">
 
             <h2>Registrar nuevo usuario</h2>
             <p>Complete todos los campos para registrar un nuevo usuario en el sistema.</p>
 
+            <!-- Creación de campos para registrar el nuevo usuario-->
             <form>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
@@ -45,25 +50,23 @@
 
                 <select name="rol" id="rol" required>
                     <option value="">Seleccione un rol</option>
-                    <option value="admin">Administrador</option>
-                    <option value="user">Usuario</option>
-                    <option value="guest">Invitado</option>
+                    <option value="1">Vecino</option>
+                    <option value="2">Administrador</option>
+                    <option value="3">Operario</option>
+                    <option value="4">Cuadrilla</option>
                 </select>
 
+                <!-- Botón para guardar el nuevo usuario registrado-->
                    <div class="botones-opciones">
                 <button type="submit" class="btn-guardar">Guardar</button>
 
+                <!-- Botón cancelar que regresa al listado de usuarios registrados -->
                 <a href="usuarios.html" class="btn-cancelar">Cancelar</a>
             </div>
             </form>
-            <p class="registro-link">
-                ¿Ya tenés una cuenta? 
-                <a href="login.html">Iniciar sesión</a>
-            </p>
-
         </section>
     </main>
-
+    
     <footer>
         <p>© Naraka BFL</p>
     </footer>

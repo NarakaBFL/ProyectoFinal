@@ -26,14 +26,14 @@
 
     <!-- Listado de registros de usuarios en el sistema -->
     <main class="gestion-main">
-        <h2>Gestión de usuarios</h2>
+        <h2>Registro de incidencias</h2>
         <p>
-            Listado de usuarios registrados en el sistema.
+            Listado de incidencias reportadas en el sistema.
         </p>
 
         <!-- Botón para agregar un nuevo registro de usuario -->
         <div class="acciones">
-            <a href="formUsuario.html" class="btn-nuevo">+ Nuevo usuario</a>
+            <a href="formIncidencia.html" class="btn-nuevo">+ Nueva incidencia</a>
         </div>
 
         <div class="tabla-form">
@@ -42,36 +42,40 @@
             <table>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Correo</th>
-                    <th>Rol</th>
+                    <th>Fecha</th>
+                    <th>Tipo de incidencia</th>
+                    <th>Descripción</th>
+                    <th>Contenedor</th>
+                    <th>Usuario</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
 
                 <tr>
                     <td>1</td>
-                    <td>Juan</td>
-                    <td>González</td>
-                    <td>juan@gmail.com</td>
-                    <td>Administrador</td>
+                    <td>21/07/2026</td>
+                    <td>Desborde</td>
+                    <td>Contenedor lleno</td>
+                    <td>C-001</td>
+                    <td>En curso</td>
+                    <td>456789</td>
                     <td>
-
-                        <!-- Botones de acciones: editar y eliminar -->
+                        <!-- Botones de acciones: editar -->
                         <button class="btn-editar">Editar</button>
-                        <button class="btn-eliminar">Eliminar</button>
                     </td>
                 </tr>
 
                 <tr>
                     <td>2</td>
-                    <td>María</td>
-                    <td>Pérez</td>
-                    <td>maria@gmail.com</td>
-                    <td>Jefe</td>
+                    <td>14/02/2026</td>
+                    <td>Incendio</td>
+                    <td>Se incendio dentro del contenedor</td>
+                    <td>C-002</td>
+                    <td>Abierta</td>
+                    <td>3982373</td>
                     <td>
+                        <!-- Botones de acciones: editar  -->
                         <button class="btn-editar">Editar</button>
-                        <button class="btn-eliminar">Eliminar</button>
                     </td>
                 </tr>
 
