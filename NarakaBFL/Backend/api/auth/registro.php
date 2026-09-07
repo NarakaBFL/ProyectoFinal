@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../config/session.php';
 require_once __DIR__ . '/../../helpers/response.php';
+require_once __DIR__ . '/../../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     responder(405, null, 'Método no permitido');
@@ -26,38 +27,35 @@ if(strlen($password) < 8) {
 }
 
 //Verificar que el email no esté registrado
-foreach ($_SESSION['usuarios'] as $usuario) {
-     if ( isset($usuario['email']) &&
-        strtolower($usuario['email']) === $email) {
-        responder(409, null, 'El email ya está registrado');
-    }
+
+$stmt = $pdo->prepare("SELECT id_usuario FROM usuario WHERE email = ?");
+$stmt->execute([$email]);
+
+if($stmt->fetch()) {
+    responder(409, null, 'El email ya está registrado');
 }
 
-if(!empty($_SESSION['usuarios'])) {
-    $ids = array_column($_SESSION['usuarios'], 'id');
+//Cifrar contraseña 
+$contrasenaHash = password_hash($password, PASSWORD_DEFAULT);
 
-    $nuevoId = max($ids) +1;
-}
+//El autorregistro siempre crea un Vecino (rol 1)
+$stmt = $pdo->prepare("INSERT INTO usuario (nombre, apellido, email, contrasena, id_rol, activo) 
+VALUES (?, ?, ?, ?, 1, 1)");
 
-//El autorregistro siempre crea un Vecino
-$nuevoUsuario = [
-    'id' => $nuevoId,
+$stmt->execute([$nombre, $apellido, $email, $contrasenaHash]);
+
+$nuevoId = $pdo->lastInsertId();
+
+//No devolver la contraseña cifrada
+$usuarioRespuesta = [
+    'id' =>$nuevoId,
     'nombre' => $nombre,
     'apellido' => $apellido,
     'email' => $email,
-
-    //El frontend envía "password", pero se guarda como "contrasena"
-    'contrasena' => password_hash($password, PASSWORD_DEFAULT),
     'id_rol' => 1,
     'rol' => 'Vecino',
     'activo' => true
 ];
 
-$_SESSION['usuarios'][] = $nuevoUsuario;
-
-//No devolver la contraseña cifrada
-$usuarioRespuesta = $nuevoUsuario;
-unset($usuarioRespuesta['contrasena']);
 responder(201, $usuarioRespuesta, 'Usuario registrado correctamente');
-
 ?>
