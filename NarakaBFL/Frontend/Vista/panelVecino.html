@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body data_roles="1">
+    <header>
+        <nav class="navbar">
+            <h1>SiGeRU</h1>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="panelVecino.html">Inicio</a></li>    
+                    <li><a href="#mis-incidencias">Mis incidencias</a></li> 
+                    <li><a href="reportarIncidencia.html">Registrar incidencia</a></li>  
+                    <li><a href="#">Mi perfil</a></li>           
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Panel principal con acceso a las gestiones -->
+    <main class="panel-main">
+        <h1>Panel del Vecino</h1>
+        
+        <a href="reportarIncidencia.html">
+            <button class="btn-reportar-incidencia">Reportar incidencia</button>
+        </a>
+
+        <section id="mis-incidencias">
+            <h2>Mis incidencias</h2>
+
+            <table>
+                <tehad>
+                    <tr>
+                        <th>ID</th>
+                        <th>Calle</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acción</th>
+                    </tr>
+                </tehad>
+
+                <tbody>
+                    <!-- Después estos datos vendrán de la API -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/auth.js"></script>
+
+</body>
+</html>

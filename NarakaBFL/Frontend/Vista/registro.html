@@ -28,7 +28,7 @@
             <p>Regístrate para acceder al sistema de gestión</p>
 
             <!-- Formulario para crear una nueva cuenta -->
-            <form>
+            <form id="registroForm">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
 
@@ -43,10 +43,13 @@
 
                 <label for="confirm-password">Confirmar contraseña:</label>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita la contraseña" required>
+
+                 <button type="submit">Registrarse</button>
+                 
+                 <p id="mensaje"></p>
+
             </form>
-
-            <button type="submit">Registrarse</button>
-
+           
             <!-- Enlace para volver al inicio sesión -->
             <p class="registro-link">
                 ¿Ya tenés una cuenta? 
@@ -59,6 +62,8 @@
     <footer>
         <p>© Naraka BFL</p>
     </footer>
+
+    <script src="../JS/registro.js"></script>
     
 </body>
 </html>

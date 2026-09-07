@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body data-roles="4">
+    <header>
+        <nav class="navbar">
+            <h1>SiGeRU</h1>
+
+            <div class="nav-links">
+                <ul>
+                   <li><a href="panelCuadrilla.html">Inicio</a></li>    
+                    <li><a href="#mi-ruta">Mi ruta</a></li> 
+                    <li><a href="#incidencias">Incidencias Asignadas</a></li>  
+                    <li><a href="#">Mi perfil</a></li>           
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Panel principal con acceso a las gestiones -->
+    <main class="panel-main">
+        <h1>Panel de Cuadrilla</h1>
+        <section id="mi-ruta">
+            <h2>Mi ruta</h2>
+            <p>Ruta asignada</p>
+            <p>Camión asignado</p>
+        </section>
+
+        <section id="incidencias">
+            <h2>Incidencias Asignadas</h2>
+            
+            <table>
+                <tehad>
+                    <tr>
+                        <th>ID</th>
+                        <th>Calle</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acción</th>
+                    </tr>
+                </tehad>
+
+                <tbody>
+                    <!-- Después vendrán de la API -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/auth.js"></script>
+
+</body>
+</html>

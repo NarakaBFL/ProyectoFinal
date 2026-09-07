@@ -26,14 +26,17 @@
             <p>Ingresá tus datos para acceder al sistema.</p>
 
             <!-- Formulario de inicio de sesión en el sistema -->
-            <form action="panel.html">
+            <form id="loginForm">
                 <label for="email">Correo electrónico</label>
-                <input type="email" id="email" placeholder="ejemplo@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
 
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" placeholder="Ingresá tu contraseña" required>
 
                 <button type="submit">Ingresar</button>
+
+                <p id="mensaje"></p>
+
             </form>
 
             <!-- Enlace para ir al registro del formulario-->
@@ -48,6 +51,8 @@
     <footer>
         <p>© Naraka BFL</p>
     </footer>
+
+    <script src="../JS/login.js"></script>
 
 </body>
 </html>

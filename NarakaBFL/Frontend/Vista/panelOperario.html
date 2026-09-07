@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body data-roles="3">
+    <header>
+        <nav class="navbar">
+            <h1>SiGeRU</h1>
+
+            <div class="nav-links">
+                <ul>
+                   <li><a href="panelOperario.html">Inicio</a></li>    
+                    <li><a href="#mi-centro">Mi Centro</a></li>   
+                    <li><a href="#">Mi perfil</a></li>           
+                    <li><a href="login.html">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Panel principal con acceso a las gestiones -->
+    <main class="panel-main">
+        <h1>Panel de Operario</h1>
+        
+        <section id="mi-centro">
+            <h2>Mi Centro de Acopio</h2>
+
+            <p>Centro asignado</p>
+            <p>Capacidad ocupada</p>
+
+            <button class="btn-gestionar-centro">Registrar ingreso de residuos</button>
+            <button class="btn-gestionar-centro">Actualizar capacidad</button>
+        </section>
+
+        <section id="mi-ruta">
+            <h2>Maquinaria</h2>
+            
+            <table>
+                <tehad>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Último mantenimiento</th>
+                        <th>Acción</th>
+                    </tr>
+                </tehad>
+
+                <tbody>
+                    <!-- Después vendrán de la API -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/auth.js"></script>
+
+</body>
+</html>
