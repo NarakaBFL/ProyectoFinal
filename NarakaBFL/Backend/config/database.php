@@ -3,8 +3,8 @@
 $host = 'localhost';
 $port = '3306';
 $dbname = 'gestion_residuos';
-$username = 'root';
-$password = '';
+$username = 'sigeru_app';
+$password = 'Sigeru2026#';
 
 try {
 
