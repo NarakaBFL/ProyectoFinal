@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camiones - Naraka BFL</title>
     <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body>
+
+<body data-roles="2">
     <header>
         <nav class="navbar">
             <h1>SiGeRU</h1>
 
             <div class="nav-links">
                 <ul>
-                    <li><a href="panel.html">Panel</a></li>
+                    <li><a href="panelAdmin.html">Panel</a></li>
                     <li><a href="usuarios.html">Usuarios</a></li>
                     <li><a href="contenedores.html">Contenedores</a></li>
                     <li><a href="camiones.html">Camiones</a></li>
@@ -40,49 +42,19 @@
         <div class="tabla-form">
 
             <table>
-                <tr>
-                    <th>Último mantenimiento</th>
-                    <th>ID</th>
-                    <th>Matrícula</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Capacidad</th>
-                    <th>Estado</th>
-                    <th>Chofer Asignado</th>
-                    <th>Acciones</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Matrícula</th>
+                        <th>Capacidad</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td>09/03/2026</td>
-                    <td>1</td>
-                    <td>HBA3281</td>
-                    <td>Mercedes</td>
-                    <td>Atego</td>
-                    <td>10 Ton</td>
-                    <td>Disponible</td>
-                    <td>Diego Lopes</td>
-                    <td>
-
-                        <!-- Botones de acciones: editar y eliminar -->
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-eliminar">Eliminar</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>12/05/2026</td>
-                    <td>2</td>
-                    <td>SAC5678</td>
-                    <td>Iveco</td>
-                    <td>Daily</td>
-                    <td>6 Ton</td>
-                    <td>En ruta</td>
-                    <td>Conor Gregorio</td>
-                    <td>
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-eliminar">Eliminar</button>
-                    </td>
-                </tr>
+                <tbody id="tablaCamiones">
+                    <!-- Los camiones vendrán desde MySQL-->
+                </tbody>
 
             </table>
 
@@ -93,5 +65,9 @@
         <p>© Naraka BFL</p>
     </footer>
 
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/camiones.js"></script>
+
 </body>
+
 </html>
