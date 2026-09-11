@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario camiones - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body data-roles="2">
+
+    <header>
+    <nav class="navbar">
+        <h1>SiGeRU</h1>
+
+        <div class="nav-links">
+            <ul>
+               <li><a href="panelAdmin.html">Panel</a></li>
+                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="contenedores.html">Contenedores</a></li>
+                    <li><a href="camiones.html">Camiones</a></li>
+                    <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <!-- Formulario para registrar un nuevo camión en el sistema -->
+    <main class="form-main">
+        <section class="form-card">
+
+            <h2>Registrar nuevo camión</h2>
+            <p>Complete todos los campos para registrar un nuevo camión en el sistema.</p>
+
+            <!-- Creación de campos para registrar al nuevo camión -->
+            <form id="camionForm">
+
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" placeholder="Matrícula del vehículo" required>
+
+                <label for="capacidad">Capacidad de carga:</label>
+                <input type="number" id="capacidad" name="capacidad" placeholder="Ingrese la capacidad de carga" required>
+
+                <select name="estado" id="estado" required>
+                    <option value="disponible">Disponible</option>
+                    <option value="en_servicio">En servicio</option>
+                    <option value="mantenimiento">En mantenimiento</option>
+                    <option value="fuera_de_servicio">Fuera de servicio</option>
+                </select>
+
+                <!-- Botones de acción: Guardar y cancelar -->
+                   <div class="botones-opciones">
+
+                <button type="submit" class="btn-guardar">Guardar</button>
+                <a href="camiones.html" class="btn-cancelar">Cancelar</a>
+
+                <p id="mensaje"></p>
+
+            </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/formCamiones.js"></script>
+    
+</body>
+</html>
