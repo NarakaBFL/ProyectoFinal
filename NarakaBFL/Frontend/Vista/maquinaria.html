@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Maquinaria</title>
+
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+
+<body data-roles="2">
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>SiGeRU</h2>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="panelAdmin.html">Panel</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="contenedores.html">Contenedores</a></li>
+                <li><a href="camiones.html">Camiones</a></li>
+                <li><a href="maquinaria.html">Maquinaria</a></li>
+                <li><a href="incidencias.html">Incidencias</a></li>
+                <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="gestion-main">
+
+        <h1>Gestión de maquinaria</h1>
+
+        <p>
+            Listado de maquinaria y equipos registrados para operaciones.
+        </p>
+
+        <div class="acciones">
+
+            <a href="formMaquinaria.html" class="btn-nuevo">
+                + Nueva maquinaria
+            </a>
+
+        </div>
+
+        <table class="tabla-form">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Estado</th>
+                    <th>Último mantenimiento</th>
+                    <th>Centro de acopio</th>
+                    <th>Acciones</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaMaquinaria">
+            </tbody>
+        </table>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/maquinaria.js"></script>
+
+</body>
+
+</html>

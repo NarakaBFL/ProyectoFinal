@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Maquinaria</title>
+
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+
+<body data-roles="2">
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>SiGeRU</h2>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="panelAdmin.html">Panel</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="contenedores.html">Contenedores</a></li>
+                <li><a href="camiones.html">Camiones</a></li>
+                <li><a href="maquinaria.html">Maquinaria</a></li>
+                <li><a href="incidencias.html">Incidencias</a></li>
+                <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="form-main">
+        <div class="form-card">
+
+            <h1 id="tituloFormulario">
+                Registrar nueva maquinaria
+            </h1>
+
+            <p>
+                Complete todos los campos para registrar una nueva maquinaria
+                en el sistema.
+            </p>
+
+            <form id="maquinariaForm">
+
+                <label for="tipo">
+                    Tipo de maquinaria:
+                </label>
+
+                <input type="text" id="tipo" name="tipo" placeholder="Ej. Compactadora, trituradora..." required>
+
+                <label for="id_centro">
+    Centro de acopio asignado:
+</label>
+
+<select id="id_centro" name="id_centro" required>
+    <option value="">Seleccione un centro de acopio</option>
+    <option value="1">Centro de Acopio Central</option>
+</select>
+
+<label for="estado">
+    Estado:
+</label>
+
+<select id="estado" name="estado" required>
+    <option value="disponible">Disponible</option>
+    <option value="en_uso">En uso</option>
+    <option value="mantenimiento">Mantenimiento</option>
+    <option value="fuera_de_servicio">Fuera de servicio</option>
+</select>
+
+<label for="fecha_ultimo_mantenimiento"> Fecha de último mantenimiento: </label>
+
+<input type="date" id="fecha_ultimo_mantenimiento" name="fecha_ultimo_mantenimiento">
+
+                <p id="mensaje"></p>
+
+                <div class="botones-opciones">
+
+                    <button type="submit" class="btn-guardar">
+                        Guardar
+                    </button>
+
+                    <a href="maquinaria.html" class="btn-cancelar">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/formMaquinaria.js"></script>
+
+</body>
+
+</html>
