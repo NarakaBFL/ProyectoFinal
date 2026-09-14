@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../config/session.php';
+require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../helpers/response.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -10,10 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $body = obtenerBody();
 
 $tipoResiduo = trim($body['tipo_residuo'] ?? '');
-$capacidad = $body['capacidad'] ?? 0;
-$ubicacion = trim($body['ubicacion'] ?? '');
-$direccion = trim($body['direccion'] ?? '');
-$estado = trim($body['estado'] ?? 'funcional');
+$capacidad   = $body['capacidad'] ?? 0;
+$ubicacion   = trim($body['ubicacion'] ?? '');
+$direccion   = trim($body['direccion'] ?? '');
+$estado      = trim($body['estado'] ?? 'funcional');
 
 $estadosValidos = [
     'funcional',
@@ -33,27 +33,30 @@ if (!in_array($estado, $estadosValidos, true)) {
     responder(400, null, 'El estado debe ser funcional, roto o desbordado');
 }
 
-$nuevoId = 1;
+try {
+    $sql = "INSERT INTO contenedor (tipo_residuo, capacidad, ubicacion, direccion, estado, activo)
+            VALUES (:tipo_residuo, :capacidad, :ubicacion, :direccion, :estado, 1)";
 
-if (!empty($_SESSION['contenedores'])) {
-    $ids = array_column(
-        $_SESSION['contenedores'],
-        'id_contenedor'
-    );
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ':tipo_residuo' => $tipoResiduo,
+        ':capacidad'    => (float) $capacidad,
+        ':ubicacion'    => $ubicacion,
+        ':direccion'    => $direccion,
+        ':estado'       => $estado,
+    ]);
 
-    $nuevoId = max($ids) + 1;
+    $nuevoContenedor = [
+        'id_contenedor' => (int) $pdo->lastInsertId(),
+        'tipo_residuo'  => $tipoResiduo,
+        'capacidad'     => (float) $capacidad,
+        'ubicacion'     => $ubicacion,
+        'direccion'     => $direccion,
+        'estado'        => $estado,
+    ];
+
+    responder(201, $nuevoContenedor, 'Contenedor registrado correctamente');
+} catch (PDOException $e) {
+    responder(500, null, 'Error al registrar el contenedor');
 }
-
-$nuevoContenedor = [
-    'id_contenedor' => $nuevoId,
-    'estado' => $estado,
-    'tipo_residuo' => $tipoResiduo,
-    'capacidad' => (float) $capacidad,
-    'ubicacion' => $ubicacion,
-    'direccion' => $direccion
-];
-
-$_SESSION['contenedores'][] = $nuevoContenedor;
-
-responder(201, $nuevoContenedor, 'Contenedor registrado correctamente');
 ?>
