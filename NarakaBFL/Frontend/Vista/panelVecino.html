@@ -6,7 +6,7 @@
     <title>Panel - Naraka BFL</title>
     <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body data_roles="1">
+<body data-roles="1">
     <header>
         <nav class="navbar">
             <h1>SiGeRU</h1>
@@ -35,7 +35,7 @@
             <h2>Mis incidencias</h2>
 
             <table>
-                <tehad>
+                <thead>
                     <tr>
                         <th>ID</th>
                         <th>Calle</th>
@@ -44,9 +44,9 @@
                         <th>Fecha</th>
                         <th>Acción</th>
                     </tr>
-                </tehad>
+                </thead>
 
-                <tbody>
+                <tbody id="tablaIncidencias">
                     <!-- Después estos datos vendrán de la API -->
                 </tbody>
             </table>
@@ -58,6 +58,7 @@
     </footer>
 
     <script src="../JS/auth.js"></script>
+    <script src="../JS/panelVecino.js"></script>
 
 </body>
 </html>
