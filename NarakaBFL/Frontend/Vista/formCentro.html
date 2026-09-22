@@ -1,55 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>SiGeRU - Alta / Edición de Centro de Acopio</title>
-<link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SiGeRU - Centro de Acopio</title>
+
+    <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body>
 
-<header>
-</header>
+<body data-roles="2">
 
-<main>
-    <h2 id="tituloForm">Nuevo Centro de Acopio</h2>
+    <header id="navbar"></header>
 
-    <form id="formCentro">
-        <input type="hidden" id="id_centro">
+    <main class="form-main">
 
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" required>
+        <section class="form-card">
 
-        <label for="ubicacion">Ubicación</label>
-        <input type="text" id="ubicacion" required>
+            <h2 id="tituloForm">Nuevo Centro de Acopio</h2>
 
-        <label for="tipo_residuo">Tipo de residuo gestionado</label>
-        <select id="tipo_residuo" required>
-            <option value="">Seleccionar...</option>
-            <option value="General">General</option>
-            <option value="Reciclable">Reciclable</option>
-            <option value="Orgánico">Orgánico</option>
-        </select>
+            <form id="formCentro">
 
-        <label for="capacidad_total">Capacidad total (kg)</label>
-        <input type="number" id="capacidad_total" min="1" step="0.01" required>
+                <input type="hidden" id="id_centro">
 
-        <!-- Solo visible al editar: RF-19.2 -->
-        <div id="grupoOcupacion" style="display:none;">
-            <label for="ocupacion_actual">Ocupación actual (kg)</label>
-            <input type="number" id="ocupacion_actual" min="0" step="0.01">
-        </div>
+                <label for="nombre">Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    required
+                >
 
-        <div class="acciones">
-            <button type="submit" class="btn-primario">Guardar</button>
-            <a href="centros.html" class="btn-secundario">Cancelar</a>
-        </div>
+                <label for="ubicacion">Ubicación</label>
+                <input
+                    type="text"
+                    id="ubicacion"
+                    required
+                >
 
-        <p id="mensajeError" class="error" style="display:none;"></p>
-    </form>
-</main>
+                <label for="tipo_residuo">
+                    Tipo de residuo gestionado
+                </label>
 
-<script src="js/centros.js"></script>
+                <select id="tipo_residuo" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="General">General</option>
+                    <option value="Reciclable">Reciclable</option>
+                    <option value="Orgánico">Orgánico</option>
+                </select>
 
-<script src="../JS/navbar.js" defer></script>
+                <label for="capacidad_total">
+                    Capacidad total
+                </label>
+
+                <input
+                    type="number"
+                    id="capacidad_total"
+                    min="1"
+                    step="0.01"
+                    required
+                >
+
+                <div id="grupoOcupacion" style="display: none;">
+
+                    <label for="ocupacion_actual">
+                        Ocupación actual
+                    </label>
+
+                    <input
+                        type="number"
+                        id="ocupacion_actual"
+                        min="0"
+                        step="0.01"
+                    >
+
+                </div>
+
+                <p id="mensajeError"></p>
+
+                <div class="botones-opciones">
+
+                    <button
+                        type="submit"
+                        class="btn-guardar"
+                    >
+                        Guardar
+                    </button>
+
+                    <a
+                        href="centros.html"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/centros.js"></script>
+
 </body>
+
 </html>

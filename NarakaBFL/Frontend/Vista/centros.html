@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>SiGeRU - Centros de Acopio y Vertederos</title>
-<link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SiGeRU - Centros de Acopio</title>
+
+    <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body>
 
-<header>
-</header>
+<body data-roles="2">
 
-<main>
-    <h2>Centros de Acopio y Vertederos</h2>
+    <header id="navbar"></header>
 
-    <div class="acciones">
-        <a href="formCentro.html" class="btn-primario">+ Nuevo Centro</a>
-    </div>
+    <main class="gestion-main">
 
-    <!-- Filtros: RF-18.4 -->
-    <form id="filtros" class="filtros">
-        <input type="text" id="f_ubicacion" placeholder="Filtrar por ubicación...">
-        <select id="f_tipo_residuo">
-            <option value="">Todos los tipos</option>
-            <option value="General">General</option>
-            <option value="Reciclable">Reciclable</option>
-            <option value="Orgánico">Orgánico</option>
-        </select>
-        <select id="f_estado">
-            <option value="">Todos los estados</option>
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
-        </select>
-        <button type="submit">Filtrar</button>
-    </form>
+        <h2>Centros de Acopio</h2>
 
-    <table id="tablaCentros">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Ubicación</th>
-                <th>Tipo de residuo</th>
-                <th>Capacidad total</th>
-                <th>Ocupación</th>
-                <th>% Ocupación</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="cuerpoTabla">
-            <!-- Filas generadas dinámicamente por centros.js -->
-        </tbody>
-    </table>
+        <div class="acciones">
+            <a href="formCentro.html" class="btn-nuevo">
+                + Nuevo Centro
+            </a>
+        </div>
 
-    <p id="mensajeVacio" style="display:none;">No se encontraron centros de acopio.</p>
-</main>
+        <table class="tabla-form">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Ubicación</th>
+                    <th>Tipo de residuo</th>
+                    <th>Capacidad total</th>
+                    <th>Ocupación</th>
+                    <th>% Ocupación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-<script src="../JS/navbar.js" defer></script>
-<script src="js/centros.js"></script>
-<script src="../JS/auth.js"></script>
+            <tbody id="tablaCentros">
+                <!-- Datos cargados desde centros.js -->
+            </tbody>
+        </table>
+
+        <p id="mensajeVacio" style="display: none;">
+            No hay centros de acopio registrados.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/centros.js"></script>
+
 </body>
+
 </html>
