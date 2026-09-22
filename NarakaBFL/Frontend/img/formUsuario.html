@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario Usuarios - SiGeRU</title>
+
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+
+<body data-roles="2">
+
+    <header id="navbar"></header>
+
+    <main class="form-main">
+
+        <section class="form-card">
+
+            <h2 id="tituloForm">Registrar nuevo usuario</h2>
+
+            <p id="descripcionForm">
+                Complete todos los campos para registrar un nuevo usuario.
+            </p>
+
+            <form id="formUsuario">
+
+                <input type="hidden" id="id_usuario">
+
+                <label for="nombre">Nombre:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    required
+                >
+
+                <label for="apellido">Apellido:</label>
+                <input
+                    type="text"
+                    id="apellido"
+                    required
+                >
+
+                <label for="email">Correo electrónico:</label>
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+
+                <label for="contrasena">Contraseña:</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                >
+
+                <label for="confirmarContrasena">
+                    Confirmar contraseña:
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarContrasena"
+                >
+
+                <label for="id_rol">Rol:</label>
+
+                <select id="id_rol" required>
+                    <option value="">Seleccione un rol</option>
+                    <option value="1">Vecino</option>
+                    <option value="2">Administrador</option>
+                    <option value="3">Operario</option>
+                    <option value="4">Cuadrilla</option>
+                </select>
+
+                <div id="grupoEstado" style="display: none;">
+
+                    <label for="activo">Estado:</label>
+
+                    <select id="activo">
+                        <option value="1">Activo</option>
+                        <option value="0">Inactivo</option>
+                    </select>
+
+                </div>
+
+                <p id="mensajeError"></p>
+
+                <div class="botones-opciones">
+
+                    <button
+                        type="submit"
+                        class="btn-guardar"
+                    >
+                        Guardar
+                    </button>
+
+                    <a
+                        href="usuarios.html"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/usuarios.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Usuarios - SiGeRU</title>
+
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+
+<body data-roles="2">
+
+    <header id="navbar"></header>
+
+    <main class="gestion-main">
+
+        <h2>Gestión de Usuarios</h2>
+
+        <div class="acciones">
+            <a href="formUsuario.html" class="btn-nuevo">
+                + Nuevo Usuario
+            </a>
+        </div>
+
+        <table class="tabla-form">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaUsuarios">
+                <!-- Usuarios cargados desde usuario.js -->
+            </tbody>
+
+        </table>
+
+        <p id="mensajeVacio" style="display: none;">
+            No hay usuarios registrados.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>© Naraka BFL</p>
+    </footer>
+
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/usuarios.js"></script>
+
+</body>
+
+</html>
