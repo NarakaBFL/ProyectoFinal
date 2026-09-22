@@ -1,43 +1,40 @@
 <?php
-require_once __DIR__ . '/../../config/db.php';
+require_once __DIR__ . '/../../config/session.php';
+require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../helpers/response.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    responder(405, 'Método no permitido');
+    responder(405, null, 'Método no permitido');
 }
 
-$pdo = getConnection();
-
-// Filtros opcionales (RF-18.4: filtrable por tipo de residuo y/o ubicación)
-$tipo_residuo = $_GET['tipo_residuo'] ?? null;
-$ubicacion    = $_GET['ubicacion'] ?? null;
-$estado       = $_GET['estado'] ?? null;
-
-$sql = "SELECT id_centro, nombre, ubicacion, tipo_residuo, capacidad_total,
-               ocupacion_actual,
-               ROUND((ocupacion_actual / capacidad_total) * 100, 2) AS porcentaje_ocupacion,
-               estado, fecha_alta
-        FROM centro_acopio
-        WHERE 1=1";
-$params = [];
-
-if ($tipo_residuo) {
-    $sql .= " AND tipo_residuo = :tipo_residuo";
-    $params[':tipo_residuo'] = $tipo_residuo;
-}
-if ($ubicacion) {
-    $sql .= " AND ubicacion LIKE :ubicacion";
-    $params[':ubicacion'] = "%$ubicacion%";
-}
-if ($estado) {
-    $sql .= " AND estado = :estado";
-    $params[':estado'] = $estado;
+if (!isset($_SESSION['usuario_actual'])) {
+    responder(401, null, 'No hay una sesión activa');
 }
 
-$sql .= " ORDER BY nombre ASC";
+if ((int) $_SESSION['usuario_actual']['id_rol'] !== 2) {
+    responder(403, null, 'No tienes permiso para realizar esta acción');
+}
 
-$stmt = $pdo->prepare($sql);
-$stmt->execute($params);
-$centros = $stmt->fetchAll();
+try {
+    $stmt = $pdo->prepare("
+    SELECT
+    id_centro, 
+    nombre,
+    ubicacion,
+    tipo_residuo,
+    capacidad_total,
+    ocupacion_actual
+    FROM centro_acopio
+    ORDER BY id_centro ASC");
 
-responder(200, 'Listado de centros de acopio y vertederos', $centros);
+    $stmt->execute();
+
+    $centros = $stmt->fetchAll();
+
+    responder(200, $centros, 'Listado de centros de acopio');
+
+} catch (PDOException $e) {
+responder(500, null, 'Error al listar los centros de acopio');
+}
+
+?>
