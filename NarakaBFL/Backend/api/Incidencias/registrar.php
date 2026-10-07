@@ -12,9 +12,12 @@ if (!isset($_SESSION['usuario_actual'])) {
     responder(401, null, 'No hay una sesión activa');
 }
 
-if ((int) $_SESSION['usuario_actual']['id_rol'] !== 1) {
+$idRol = (int) $_SESSION['usuario_actual']['id_rol']; 
+
+if (!in_array($idRol, [1, 2], true)) {
     responder(403, null, 'No tienes permiso para realizar esta acción');
 }
+
 
 $datos = obtenerBody();
 
@@ -44,7 +47,7 @@ if (empty($descripcion)) {
 }
 
 if ($idContenedor <= 0) {
-    responder(400, null, 'Debe seleccionar una calle');
+    responder(400, null, 'Debe seleccionar un contenedor');
 }
 
 // Verificar que el contenedor exista
