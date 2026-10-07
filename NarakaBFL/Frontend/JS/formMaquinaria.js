@@ -1,14 +1,56 @@
 const form = document.getElementById('maquinariaForm');
 const mensaje = document.getElementById('mensaje');
 const tituloFormulario = document.getElementById('tituloFormulario');
+const selectCentro = document.getElementById('id_centro');
+
+const API_CENTROS = '../../Backend/api/centros/listar.php';
 
 const params = new URLSearchParams(window.location.search);
 const idMaquinaria = params.get('id');
 
-// Si hay un ID en la URL, estamos editando
-if (idMaquinaria) {
-    tituloFormulario.textContent = 'Editar maquinaria';
-    cargarMaquinaria();
+async function cargarCentros() {
+
+    try {
+
+        const res = await fetch(API_CENTROS, {
+            method: 'GET',
+            credentials: 'include'
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            mensaje.textContent =
+                data.mensaje || 'Error al cargar los centros de acopio';
+            return false;
+        }
+
+        selectCentro.innerHTML =
+            '<option value="">Seleccione un centro de acopio</option>';
+
+        data.data.forEach(centro => {
+
+            const option = document.createElement('option');
+
+            option.value = centro.id_centro;
+
+            option.textContent =
+                `${centro.nombre} - ${centro.ubicacion}`;
+
+            selectCentro.appendChild(option);
+        });
+
+        return true;
+
+    } catch (error) {
+
+        console.error('Error al cargar centros:', error);
+
+        mensaje.textContent =
+            'No se pudieron cargar los centros de acopio';
+
+        return false;
+    }
 }
 
 // Cargar los datos de la maquinaria seleccionada
@@ -114,3 +156,19 @@ form.addEventListener('submit', async function (e) {
     }
 
 });
+
+async function iniciarFormulario() {
+
+    const centrosCargados = await cargarCentros();
+
+    if (!centrosCargados) {
+        return;
+    }
+
+    if (idMaquinaria) {
+        tituloFormulario.textContent = 'Editar maquinaria';
+        await cargarMaquinaria();
+    }
+}
+
+iniciarFormulario();

@@ -11,7 +11,7 @@ navbar.innerHTML = `
                 <li><a href="contenedores.html">Contenedores</a></li>
                 <li><a href="camiones.html">Camiones</a></li>
                 <li><a href="incidencias.html">Incidencias</a></li>
-                <li><a href="centrosAcopio.html">Centros de acopio</a></li>
+                <li><a href="centros.html">Centros de acopio</a></li>
                 <li><a href="maquinaria.html">Maquinaria</a></li>
                 <li><a href="login.html">Cerrar sesión</a></li>
             </ul>
