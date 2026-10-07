@@ -1,62 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario contenedores - Naraka BFL</title>
     <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body>
 
-    <header>
-</header>
+<body data-roles="2">
 
-    <!-- formulario para registrar un nuevo contenedor en el sistema -->
+    <header id="navbar"></header>
+
     <main class="form-main">
         <section class="form-card">
 
             <h2>Registrar nuevo contenedor</h2>
+
             <p>Complete todos los campos para registrar un nuevo contenedor en el sistema.</p>
 
-            <!-- Creación de campos para registrar el nuevo contenedor -->
-            <form>
-                <select name="tipo" id="tipo" required>
-                    <option value="">Tipo de residuo</option>
-                    <option value="Papel">Papel</option>
+            <form id="formContenedor">
+
+                <label for="tipo_residuo">Tipo de residuo:</label>
+
+                <select name="tipo_residuo" id="tipo_residuo" required>
+
+                    <option value="">Seleccione un tipo</option>
+                    <option value="papel">Papel</option>
                     <option value="plastico">Plástico</option>
                     <option value="metal">Metal</option>
                     <option value="organicos">Orgánicos</option>
                     <option value="vidrio">Vidrio</option>
-                </select>
-                
-                <label for="litros">Capacidad:</label>
-                <input type="number" id="litros" name="litros" placeholder="Litros" required>
 
-                <label for="ubi">Ubicación:</label>
-                <input type="text" id="ubi" name="ubi" placeholder="Ingrese ubicación" required>
+                </select>
+
+                <label for="capacidad">Capacidad:</label>
+
+                <input type="number" id="capacidad" name="capacidad" placeholder="Litros" min="1" required>
+
+                <label for="ubicacion">Ubicación:</label>
+
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese ubicación" required>
+
+                <label for="estado">Estado:</label>
 
                 <select name="estado" id="estado" required>
-                    <option value="">Estado</option>
-                    <option value="activo">Activo</option>
-                    <option value="Lleno">Lleno</option>
-                    <option value="fueraServicio">Fuera de servicio</option>
-                    <option value="mantenimiento">En mantenimiento</option>
+
+                    <option value="">Seleccione un estado</option>
+                    <option value="funcional">Funcional</option>
+                    <option value="roto">Roto</option>
+                    <option value="desbordado">Desbordado</option>
+
                 </select>
 
-                <!-- Botones de acciones: Guardar y cancelar -->
-                   <div class="botones-opciones">
-                <button type="submit" class="btn-guardar">Guardar</button>
+                <div class="botones-opciones">
 
-                <a href="contenedores.html" class="btn-cancelar">Cancelar</a>
-            </div>
+                    <button type="submit" class="btn-guardar">Guardar</button>
+
+                    <a href="contenedores.html" class="btn-cancelar">Cancelar</a>
+
+                </div>
+
             </form>
+
         </section>
     </main>
 
     <footer>
-        <p>© Naraka BFL</p>
-    </footer>
-    
-    <script src="../JS/navbar.js" defer></script>
+    <p>© Naraka BFL - SiGeRU</p>
+
+    <div class="footer-links">
+        <a href="panelAdmin.html" style="text-decoration: none;">Panel</a>
+        <a href="inicio.html" style="text-decoration: none;">Inicio</a>
+    </div>
+</footer>
+
+    <script src="../JS/navbar.js?v=2" defer></script>
+    <script src="../JS/auth.js" defer></script>
+    <script src="../JS/contenedores.js" defer></script>
+
 </body>
+
 </html>

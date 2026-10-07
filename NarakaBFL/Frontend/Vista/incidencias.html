@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios - Naraka BFL</title>
+    <title>Admin - Naraka BFL</title>
     <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body>
-    <header>
+
+<!-- Listado de incidencias reportadas en el sistema -->
+<body data-roles="2">
+    <header id="navbar">
     </header>
 
-    <!-- Listado de registros de usuarios en el sistema -->
     <main class="gestion-main">
         <h2>Registro de incidencias</h2>
         <p>
             Listado de incidencias reportadas en el sistema.
         </p>
 
-        <!-- Botón para agregar un nuevo registro de usuario -->
+        <!-- Botón para agregar un nuevo registro de incidencia -->
         <div class="acciones">
-            <a href="formIncidencia.html" class="btn-nuevo">+ Nueva incidencia</a>
+            <a href="formIncidenciaAdmin.html" class="btn-nuevo">+ Nueva incidencia</a>
         </div>
 
         <div class="tabla-form">
 
             <!-- Tabla con datos de ejemplo -->
             <table>
+                <thead>
                 <tr>
                     <th>ID</th>
                     <th>Fecha</th>
@@ -36,34 +38,11 @@
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
+                </thead>
 
-                <tr>
-                    <td>1</td>
-                    <td>21/07/2026</td>
-                    <td>Desborde</td>
-                    <td>Contenedor lleno</td>
-                    <td>C-001</td>
-                    <td>En curso</td>
-                    <td>456789</td>
-                    <td>
-                        <!-- Botones de acciones: editar -->
-                        <button class="btn-editar">Editar</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>2</td>
-                    <td>14/02/2026</td>
-                    <td>Incendio</td>
-                    <td>Se incendio dentro del contenedor</td>
-                    <td>C-002</td>
-                    <td>Abierta</td>
-                    <td>3982373</td>
-                    <td>
-                        <!-- Botones de acciones: editar  -->
-                        <button class="btn-editar">Editar</button>
-                    </td>
-                </tr>
+                <tbody id="tablaIncidencias">
+                    <!-- Las incidencias vendrán desde JS-->
+                </tbody>
 
             </table>
 
@@ -71,9 +50,16 @@
     </main>
 
     <footer>
-        <p>© Naraka BFL</p>
+    <p>© Naraka BFL - SiGeRU</p>
+
+    <div class="footer-links">
+        <a href="panelAdmin.html" style="text-decoration: none;">Panel</a>
+        <a href="inicio.html" style="text-decoration: none;">Inicio</a>
+    </div>
     </footer>
 
-    <script src="../JS/navbar.js" defer></script>
+    <script src="../JS/navbar.js?v=2" defer></script>
+    <script src="../JS/auth.js" defer></script>
+    <script src="../JS/incidencias.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario incidencia admin - Naraka BFL</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+
+<body data-roles="2">
+
+    <header id="navbar">
+    </header>
+
+    <!-- Formulario para reportar una nueva incidencia en el sistema -->
+    <main class="form-main">
+        <section class="form-card">
+
+            <h2>Reportar nueva incidencia</h2>
+
+            <p>Complete todos los campos para reportar una nueva incidencia en el sistema.</p>
+
+            <!-- Creación de campos para reportar incidencia -->
+            <form id="formIncidenciaAdmin">
+
+                <label for="tipo">Tipo de incidencia</label>
+                <select name="tipo" id="tipo" required>
+
+                    <option value="">Seleccione una opción</option>
+                    <option value="rotura">Rotura</option>
+                    <option value="desborde">Desborde</option>
+                    <option value="falta_recoleccion">Falta de recolección</option>
+                    <option value="otro">otro</option>
+
+                </select>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="6" required></textarea>
+
+                <label for="id_contenedor">Contenedor involucrado</label>
+                <select name="id_contenedor" id="id_contenedor" required>
+                    <option value="">Seleccione un contenedor</option>
+                    <!-- Después se cargan los contenedores desde JS-->
+                </select>
+
+                <!-- Botones de acción: Guardar y cancelar -->
+                <div class="botones-opciones">
+                    <button type="submit" class="btn-guardar">Guardar</button>
+                    <a href="incidencias.html" class="btn-cancelar">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+    <p>© Naraka BFL - SiGeRU</p>
+
+    <div class="footer-links">
+        <a href="panelAdmin.html" style="text-decoration: none;">Panel</a>
+        <a href="inicio.html" style="text-decoration: none;">Inicio</a>
+    </div>
+</footer>
+
+    <script src="../JS/navbar.js?v=2" defer></script>
+    <script src="../JS/auth.js" defer></script>
+    <script src="../JS/formIncidenciaAdmin.js" defer></script>
+
+</body>
+
+</html>

@@ -12,15 +12,15 @@
 
 <body data-roles="2">
 
-    <header>
+    <header id="navbar">
     </header>
 
     <main class="form-main">
         <div class="form-card">
 
-            <h1 id="tituloFormulario">
+            <h2>
                 Registrar nueva maquinaria
-            </h1>
+            </h2>
 
             <p>
                 Complete todos los campos para registrar una nueva maquinaria
@@ -41,7 +41,7 @@
 
 <select id="id_centro" name="id_centro" required>
     <option value="">Seleccione un centro de acopio</option>
-    <option value="1">Centro de Acopio Central</option>
+    <!-- Los centros se cargarán desde JavaScript -->
 </select>
 
 <label for="estado">
@@ -75,9 +75,18 @@
         </div>
     </main>
 
+    <footer>
+    <p>© Naraka BFL - SiGeRU</p>
+
+    <div class="footer-links">
+        <a href="panelAdmin.html" style="text-decoration: none;">Panel</a>
+        <a href="inicio.html" style="text-decoration: none;">Inicio</a>
+    </div>
+</footer>
+
     <script src="../JS/auth.js"></script>
     <script src="../JS/formMaquinaria.js"></script>
-    <script src="../JS/navbar.js" defer></script>
+    <script src="../JS/navbar.js?v=2" defer></script>
 
 </body>
 

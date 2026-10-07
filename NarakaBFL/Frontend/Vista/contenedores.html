@@ -1,79 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contenedores - Naraka BFL</title>
     <link rel="stylesheet" href="../CSS/estilo.css">
 </head>
-<body>
-    <header>
-    </header>
 
-    <!-- Listado de registro de contenedores en el sistema -->
+<body data-roles="2">
+
+    <header id="navbar"></header>
+
     <main class="gestion-main">
-        <h2>Gestión de contenedores</h2>
-        <p>
-            Listado de contenedores registrados en el sistema.
-        </p>
 
-        <!-- Botón para agregar un nuevo contenedor -->
+        <h2>Gestión de contenedores</h2>
+
+        <p>Listado de contenedores registrados en el sistema.</p>
+
         <div class="acciones">
             <a href="formContenedor.html" class="btn-nuevo">+ Nuevo Contenedor</a>
         </div>
 
         <div class="tabla-form">
 
-            <!-- Tabla con datos de ejemplo -->
             <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Código/th>
-                    <th>Tipo</th>
-                    <th>Capacidad</th>
-                    <th>Ubicación</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
 
-                <tr>
-                    <td>1</td>
-                    <td>C001</td>
-                    <td>Plástico</td>
-                    <td>1000 L</td>
-                    <td>Centro</td>
-                    <td>Activo</td>
-                    <td>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo de residuo</th>
+                        <th>Capacidad</th>
+                        <th>Ubicación</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
 
-                        <!-- Botones de acción: editar y eliminar -->
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-eliminar">Eliminar</button>
-                    </td>
-                </tr>
+                <tbody id="tablaContenedores">
 
-                <tr>
-                    <td>2</td>
-                    <td>C002</td>
-                    <td>Papel</td>
-                    <td>800 L</td>
-                    <td>Parque</td>
-                    <td>Activo</td>
-                    <td>
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-eliminar">Eliminar</button>
-                    </td>
-                </tr>
+                    <!-- Los contenedores se cargarán desde JavaScript -->
+
+                </tbody>
 
             </table>
 
         </div>
+
     </main>
 
     <footer>
-        <p>© Naraka BFL</p>
-    </footer>
+    <p>© Naraka BFL - SiGeRU</p>
 
-    <script src="../JS/navbar.js" defer></script>
+    <div class="footer-links">
+        <a href="panelAdmin.html" style="text-decoration: none;">Panel</a>
+        <a href="inicio.html" style="text-decoration: none;">Inicio</a>
+    </div>
+</footer>
+
+    <script src="../JS/navbar.js?v=2" defer></script>
+    <script src="../JS/auth.js" defer></script>
+    <script src="../JS/contenedores.js" defer></script>
 
 </body>
+
 </html>
