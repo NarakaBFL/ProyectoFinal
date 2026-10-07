@@ -302,6 +302,24 @@ button:hover {
 
 footer {
     background-color: #b0b3f7;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.footer-links {
+    margin-top: 8px;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 900px) {
@@ -596,7 +614,7 @@ background-color: white;
 }
 /*----------------------------------------------------------------------*/
 
-/* Gestión de usuarios, camiones y contenedores */
+/* Gestión de usuarios, camiones, contenedores, etc */
 
 .gestion-main{
     background-color: #f3f1e8;
@@ -689,7 +707,7 @@ tr:hover {
 }
 /*----------------------------------------------------------------------*/
 
-/* Formulario de usuarios, camiones, contenedores */
+/* Formulario de usuarios, camiones, contenedores, etc */
 
 .form-main{
     min-height: 80vh;
